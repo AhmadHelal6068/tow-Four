@@ -1,0 +1,758 @@
+/* Start Root */
+:root{
+    --main-color: #2a2273;;
+    --main-hover: #fc7c2c;
+}
+/* End Root */
+
+/* Start Glopal Element */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* html{
+    scroll-behavior: smooth;
+} */
+body{
+    font-family: monospace;
+}
+h1, h2, h3, h4{
+    color: #333;
+}
+p{
+    color: #777;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+/* End Glopal Element */
+
+/* Start Glopal Clases */
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+.container-fuild{
+    width: 100vw;
+    margin: 0 auto;
+    max-width: 100%;
+}
+.pading-50{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.pading-100{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+/* End Glopal Clases */
+
+/* ------------------------ |" Start header "| ----------------------------- */
+.header{
+    width: 100%;
+    height: 80px;
+    box-shadow:0 8px 20px rgba(0, 0, 0, 0.1) ;
+    background-color: #fff;
+}
+.header .box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    position: relative;
+    background-color: #fff;
+}
+.header .box .nav .ul{
+    display: flex;
+}
+.header .box .nav .ul .icon{
+    display: none;
+}
+.header .box .nav .ul > li > a{
+    color: #2c2c2c;
+    font-weight: bold;
+    margin: 0 10px;
+    font-size: 18px;
+}
+.header .box .ling i{
+    cursor: pointer;
+    margin: 0 10px;
+    font-size: 20px;
+}
+.header .box .ling a{
+    text-transform: uppercase;
+    color: #fff;
+    background-image: linear-gradient( -45deg, rgba(250, 209, 38, 0.99608) 0%, #ff544f 100%);
+    padding: 35px 10px 30px;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.7 ease-in-out;
+}
+.header .box .ling a{
+    opacity: 0.7;
+}
+.header .box .menu{
+    display: none;
+}
+@media(max-width:991px){
+    .header .box .nav .ul{
+        position: absolute;
+        flex-direction: column;
+        top: 0px;
+        right: 0;
+        left: 0;
+        background-color: #fff;
+        box-shadow:0 8px 20px rgba(0, 0, 0, 0.1) ;
+        padding: 20px 10px;
+        transform: translateY(-100%);
+        z-index: 1;
+        transition: all 0.5s ease-in-out;
+    }
+    .header .box .nav .ul.active{
+        transform: translateY(80px);
+    }
+    .header .box .nav .ul > li > a{
+        line-height: 40px;
+        position: relative;
+        transition: all 0.5s ease-in-out;
+    }
+    .header .box .nav .ul > li > a.active::before,
+    .header .box .nav .ul > li > a:hover::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+    }
+    .header .box .ling{
+        display: none;
+    }
+    .header .box .nav .ul .icon{
+        display: flex;
+        margin-top: 30px;
+    }
+    .header .box .nav .ul .icon i{
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .header .box .nav .ul .icon i:first-child{
+        margin-left: 10px;
+        margin-right: 40px;
+    }
+    .header .box .menu{
+        display: block;
+        cursor: pointer;
+    }
+}
+/* ------------------------ |" End header "| ----------------------------- */
+
+/* ------------------------ |" Start landing "| ----------------------------- */
+.landing{
+    width: 100%;
+    height: calc(100vh - 80px);
+    background: url("../img/banner.jpg") center center no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.landing > img{
+    position: absolute;
+    right: 0;
+    top: 60px;
+    animation: zoomIn 3s linear infinite;
+}
+.landing .box{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.landing .box .text h1{
+    color: #2c2c2c;
+    font-size: 70px;
+    font-weight: bold;
+}
+.landing .box .text h2{
+    font-size: 50px;
+    color: var(--main-hover);
+    padding: 10px 0;
+}
+.landing .box .text p{
+    color: #777;
+    margin-bottom: 50px;
+}
+a.btn{
+    line-height: 1.5;
+    background-color: var(--main-color);
+    padding: 14px 44px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 15px;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
+a.btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--main-hover);
+    z-index: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+a.btn:hover::before{
+    width: 100%;
+}
+/* ------------------------ |" End landing "| ----------------------------- */
+
+/* ------------------------ |" Start about "| ----------------------------- */
+.about{
+    background: url("../img/we_do_bg.png")no-repeat;
+    background-size: cover;
+    background-color: var(--main-color);
+    position: relative;
+    text-align: center;
+}
+.about > img{
+    position: absolute;
+    right: 0;
+    top: 100px;
+    animation: zoomIn 3s linear infinite;
+}
+@keyframes zoomIn{
+    0%{
+        top: 100px;
+    }
+    50%{
+        top: 140px;
+    }
+    100%{
+        top: 100px;
+    }
+}
+.about .title{
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+.about .title h1{
+    color: #fff;
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+.about .title p{
+    color: #eee;
+    margin-bottom: 50px;
+}
+.about .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+}
+.about .box .text{
+    text-align: center;
+}
+.about .box .text:not(:last-child){
+    border-right:1px dashed #fff ;
+}
+.about .box .text h2{
+    color: var(--main-hover);
+    padding: 10px 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.about .box .text p{
+    color: #fff;
+}
+/* ------------------------ |" End about "| ----------------------------- */
+
+/* ------------------------ |" Start Portfolio "| ----------------------------- */
+.title-g{
+    text-align: center;
+}
+.title-g p{
+    color: var(--main-hover);
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.title-g h2{
+    font-size: 60px;
+    color: #333;
+    padding: 10px 0 20px;
+}
+.title-g img{
+    margin-bottom: 50px;
+}
+.portfolio .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.portfolio .box .text{
+    padding: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    text-align: center;
+    position: relative;
+}
+.portfolio .box .text::before{
+    content: "1";
+    position: absolute;
+    font-size: 200px;
+    font-weight: bold;
+    color: var(--main-hover);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.2;
+}
+.portfolio .box .text:nth-child(2)::before{
+    content: "2";
+}
+.portfolio .box .text:nth-child(3)::before{
+    content: "3";
+}
+.portfolio .box .text:nth-child(4)::before{
+    content: "4";
+}
+.portfolio .box .text:nth-child(5)::before{
+    content: "5";
+}
+.portfolio .box .text:nth-child(6)::before{
+    content: "6";
+}
+.portfolio .box .text h3{
+    margin: 10px 0 20px;
+    font-size: 25px;
+}
+.portfolio .box .text p{
+    color: #777;
+}
+/* ------------------------ |" End Portfolio "| ----------------------------- */
+
+/* ------------------------ |" Start pages "| ----------------------------- */
+.pages .box{
+    display: flex;
+    position: relative;
+}
+.pages .box .text{
+    flex-basis: 50%;
+}
+.pages .box .text:last-child{
+    position: relative;
+}
+.pages .box .text .item{
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.pages .box .text img{
+    width: 100%;
+    max-width: 100%;
+}
+.pages .box .text h4{
+    color: var(--main-hover);
+    letter-spacing: 3px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.pages .box .text h2{
+    font-size: 40px;
+    color: #333;
+    padding: 10px 0 40px;
+}
+.pages .box .text p{
+    color: #777;
+    margin-bottom: 40px;
+}
+.pages .box .text a{
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 14px 40px;
+    background-color: var(--main-color);
+    transition: all 0.5s ease-in-out;
+}
+/* ------------------------ |" End pages "| ----------------------------- */
+
+/* ------------------------ |" Start blog "| ----------------------------- */
+.blog .container .box{
+    display: flex;
+    justify-content: center;
+}
+.blog .container .box .text{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.blog .container .box .text span{
+    font-size: 20px;
+    margin: 20px 0px 50px;
+    padding: 0px 30px;
+    color: #2c2c2c;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+.blog .container .box .text span:not(:last-child)::before{
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #777;
+    border-radius: 50%;
+    right: 0px;
+    top: 7px;
+}
+.blog .container .box .text span:hover{
+    color: var(--main-hover);
+}
+.blog .container-fuild .box{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.blog .container-fuild .box .text{
+    max-width: 100%;
+    flex-basis: 25%;
+    position: relative;
+}
+.blog .container-fuild .box .text::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in-out;
+}
+.blog .container-fuild .box .text:hover::before{
+    background-image: linear-gradient( -45deg, rgba(250, 209, 38, 0.99608) 0%, #ff544f 100%);
+
+}
+.blog .container-fuild .box .text img{
+    width: 100%;
+    height: 100%;
+}
+.blog .container-fuild .box .text .item{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+    animation: Lefta 0.5s linear;
+    width: 100%;
+}
+.blog .container-fuild .box .text:hover .item{
+    opacity: 1;
+}
+.blog .container-fuild .box .text .item h3{
+    color: #fff;
+    font-size: 23px;
+    padding-bottom: 20px;
+}
+.blog .container-fuild .box .text .item a{
+    color: #fff;
+    font-weight: bold;
+}
+.blog .container-fuild .box .text .item i{
+    color: #fff;
+    margin-top: 30px;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+.blog .container-fuild .box .text .item i:hover{
+    color: var(--main-hover);
+}
+/* ------------------------ |" End blog "| ----------------------------- */
+
+/* ------------------------ |" Start bul "| ----------------------------- */
+.bul{
+    background-color: #f9f9f9;
+}
+.bul .box{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.bul .box img{
+    opacity: 0.7;
+    transition: all 0.3s ease-in-out;
+    margin: 30px 30px;
+}
+.bul .box img:hover{
+    opacity: 2;
+    cursor: pointer;
+}
+/* ------------------------ |" End bul "| ----------------------------- */
+
+/* ------------------------ |" Start item "| ----------------------------- */
+.item .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 40px;
+}
+.item .box .text > img{
+    width: 100%;
+    height: 300px;
+    margin-bottom: 30px;
+}
+.item .box .text .item{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+.item .box .text .item .info{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.item .box .text .item .info img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.item .box .text .item .info h4{
+    color: #2c2c2c;
+    padding-bottom: 10px;
+}
+.item .box .text .item .info span{
+    color: var(--main-hover);
+}
+.item .box .text .item h3{
+    color: #2c2c2c;
+    font-size: 20px;
+}
+/* ------------------------ |" End item "| ----------------------------- */
+
+/* ------------------------ |" Start form "| ----------------------------- */
+.form{
+    position: relative;
+    text-align: center;
+    background-image: url("../img/shap_circle-min.png");
+    background-size: cover;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    z-index: 1;
+}
+.form::before{
+    background-image: linear-gradient(to bottom right, rgba(250, 209, 38, 0.99608) 0%, #ff544f 100%);
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+.form .box{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.form .box h2{
+    color: #fff;
+    font-size: 30px;
+}
+.form .box p{
+    color: #eee;
+    padding: 20px 0 30px;
+}
+.form .box form{
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+.form .box form input{
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #fff;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+}
+.form .box form input:focus{
+    outline: none;
+}
+.form .box form i{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+}
+/* ------------------------ |" End form "| ----------------------------- */
+
+/* ------------------------ |" Start footer "| ----------------------------- */
+.footer{
+    background-color:#130f38;
+    padding-top: 50px;
+}
+.footer .box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+}
+.footer .box .text.three,
+.footer .box .text.tow,
+.footer .box .text.four{
+    line-height: 35px;
+}
+.footer .box .text.one{
+    line-height: 25px;
+}
+.footer .box .text.one img{
+    margin-bottom: 20px;
+}
+.footer .box .text.one p{
+    color: #BCBBC5;
+}
+.footer .box .text h2{
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+.footer .box .text a{
+    position: relative;
+    color: #BCBBC5;
+    font-size: 17px;
+    padding-left: 15px;
+}
+.footer .box .text.three a::before,
+.footer .box .text.tow a::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: #eee;
+    left: 0;
+    top: 8px;
+    border-radius: 50%;
+}
+.footer .box .text.four i{
+    padding-left: 5px;
+    color: #fff;
+}
+.footer .box .text.four img{
+    margin-left: 5px;
+}
+.footer .box-bottom{
+    padding: 0 30px;
+    line-height: 30px;
+}
+.footer .box-bottom h3{
+    color: #fff;
+    text-align: center;
+}
+/* ------------------------ |" End footer "| ----------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Start Medea */
+@media(max-width: 991px){
+    .landing .box .text h1{
+        font-size: 60px;
+    }
+    .landing .box .text h2{
+        font-size: 40px;
+    }
+    .about .box .text:not(:last-child){
+        border-right:1px dashed transparent;
+    }
+    .blog .container-fuild .box .text{
+        flex-basis: 50%;
+    }
+}
+@media(max-width:768px){
+    .landing .box .text h1{
+        font-size: 50px;
+    }
+    .landing .box .text h2{
+        font-size: 30px;
+    }
+    .portfolio .title h2{
+        font-size: 40px;
+    }
+    .pages .box {
+        flex-direction: column;
+    }
+    .pages .box .text .item {
+        position: inherit;
+        width: 90%;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        margin: 0 auto;
+        padding-top: 30px;
+    }
+    .blog .container .box .text span {
+        margin: 0px 0px 20px;
+    }
+}
+@media(max-width:578px){
+    .landing {
+        height: calc(80vh - 80px);
+        text-align: center;
+    }
+    .landing .box {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .landing .box .text h1{
+        font-size: 30px;
+    }
+    .landing .box .text h2{
+        font-size: 20px;
+    }
+    .about .title h1{
+        font-size: 25px;
+    }
+    .title-g h2 {
+        font-size: 30px;
+    }
+    .portfolio .title h2{
+        font-size: 30px;
+    }
+    .blog .container-fuild .box .text{
+        flex-basis: 100%;
+    }
+    .form .box {
+        width: 80%;
+    }
+}
